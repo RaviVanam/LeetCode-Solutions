@@ -1,4 +1,4 @@
-package leetcode.jumpGameIV_1245;
+package jumpGameIV_1245;
 
 public class Solution {
     public static void main(String[] args) {
