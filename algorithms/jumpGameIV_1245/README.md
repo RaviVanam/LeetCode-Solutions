@@ -8,10 +8,10 @@
 > *Next indices* for index `i` are the indices that can be reached from index `i` by doing just one jump
 
 > index `i`'s next indices are:
-1. index `i - 1`
-2. index `i + 1`
-3. all indices that have same value as index `i`
-** All these next indices have same minimum jumps = `dp[i] + 1` (assuming the next indices haven't been processed already)
+> 1. index `i - 1`
+> 2. index `i + 1`
+> 3. all indices that have same value as index `i`
+> ** All these next indices have same minimum jumps = `dp[i] + 1` (assuming the next indices haven't been processed already)
 
 > How to find the next indices `i` ?
 1.Create a Map `indices`: map each value to list of indices having same value
