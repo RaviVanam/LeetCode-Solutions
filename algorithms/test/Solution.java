@@ -1,24 +1,24 @@
 package test;
 
-import java.util.Stack;
-
 public class Solution {
-    int kthValue(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<>();
-        int count = 0;
+    public static int countMaximumOperations(String s, String t) {
+        int ans = Integer.MAX_VALUE;
+        int[] freqS = new int[26];
+        int[] freqT = new int[26];
 
-        while (!stack.empty() || root != null) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
-                continue;
-            }
-
-            count++;
-            if (count == k) return stack.pop().val;
-            root = stack.pop().right;
+        for (char c: t.toCharArray()) {
+            freqT[c - 'a']++;
         }
 
-        return 0;
+        for (char c: s.toCharArray()) {
+            freqS[c - 'a']++;
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if (freqT[i] > 0)
+                ans = Math.min(ans, freqS[i] / freqT[i]);
+        }
+
+        return ans;
     }
 }
