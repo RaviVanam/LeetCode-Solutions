@@ -26,8 +26,7 @@ class Solution {
             for (int j = start + m - 1; j < n; j = j + m) {
                 String curWord = s.substring(j - m + 1, j + 1);
 
-                substringWordFreq.putIfAbsent(curWord, 0);
-                substringWordFreq.put(curWord, 1 + substringWordFreq.get(curWord));
+                substringWordFreq.put(curWord, 1 + substringWordFreq.getOrDefault(curWord, 0));
 
                 if (!wordFreq.containsKey(curWord)) {
                     while (i < j) {
