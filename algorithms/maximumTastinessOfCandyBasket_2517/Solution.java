@@ -1,12 +1,8 @@
-package test;
+package maximumTastinessOfCandyBasket_2517;
 
 import java.util.Arrays;
 
 class Solution {
-    public static void main(String[] args) {
-        new Solution().maximumTastiness(new int[]{13, 5, 1, 8, 21, 2}, 3);
-    }
-
     public int maximumTastiness(int[] price, int k) {
         int r = 1000_000_000;
         int l = 0;
